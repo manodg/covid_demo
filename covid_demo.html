@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.116.1/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.116.1/examples/js/controls/OrbitControls.js"></script>
+<script src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
+<script src="demo.js"></script>
+
+<style>
+  #three-container {
+     position: relative;
+     display: inline-block;
+     vertical-align: top;
+   }
+    .button {
+      width: 150px ;
+      background-color: rgb(20, 11, 148); /* Green */
+      border: none;
+      color: white;
+      padding: 5px 15px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .button:hover {
+      background-color: rgb(20, 20, 100);
+    }
+   .ui {
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    visibility:hidden;
+   }
+ 
+ </style>
+ <script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
+ 
+ <body>
+   <p id="info"></p>
+   <div id="three-container">
+     <canvas id="three-canvas"></canvas>
+     <canvas id="output" style=""></canvas>
+     <video id="video" playsinline style="
+       -webkit-transform: scaleX(-1);
+       transform: scaleX(-1);
+       visibility: hidden;
+       width: auto;
+       height: auto;
+       position: absolute;
+       ">
+     </video>
+
+     <button style="top:0; text-align:center" id="wash" class="ui button">Wash Hands!</button>
+     <button style="top:0" class="ui button" onclick=" window.open('https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public','_blank')" id="who" class="ui">More info</button>
+     <font color = "white" size = "4" ><p id="counterText" class="ui"></p></font>
+
+   </div>
+ 
+
+ 
+
+</html>
